@@ -32,11 +32,11 @@ public class TestBase {
 
     @After
     public void tearDown() throws Exception {
-//        driver.quit();
-//        String verificationErrorString = verificationErrors.toString();
-//        if (!"".equals(verificationErrorString)) {
-//          fail(verificationErrorString);
-//        }
+        driver.quit();
+        String verificationErrorString = verificationErrors.toString();
+        if (!"".equals(verificationErrorString)) {
+          fail(verificationErrorString);
+        }
     }
 
     protected void deletePosition() {
