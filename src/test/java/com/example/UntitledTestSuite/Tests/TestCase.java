@@ -11,18 +11,16 @@ public class TestCase extends TestBase {
           "%d0%bb%d0%b5%d0%ba%d1%82-%d0%bf%d0%be%d1%81%d1%82%d0%b5%d0%bb%d1%8c%d0%bd%d0%be%d0%b3%d0%be-3/", 2);
   @Test
   public void loginTestCase() throws Exception {
-    driver.manage().window().maximize();
-    openLoginPage();
-    login(user);
+    appManager.getNavigation().openLoginPage();
+    appManager.getLogin().login(user);
   }
   @Test
   public void addPositionTestCase() throws Exception {
-    driver.manage().window().maximize();
-    openLoginPage();
-    login(user);
-    addGoodPositionToCart(position);
-    openCartPage();
-    setCartPositionQuantity(4);
-    deletePosition();
+    appManager.getNavigation().openLoginPage();
+    appManager.getLogin().login(user);
+    appManager.getData().addGoodPositionToCart(position);
+    appManager.getNavigation().openCartPage();
+    appManager.getData().setCartPositionQuantity(4);
+    appManager.getData().deletePosition();
   }
 }
